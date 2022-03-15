@@ -3,16 +3,15 @@ from src.repositories.movie_repository import movie_repository_singleton
 
 app = Flask(__name__)
 
-
 @app.get('/')
 def index():
     return render_template('index.html')
 
-
 @app.get('/movies')
 def list_all_movies():
     # TODO: Feature 1
-    return render_template('list_all_movies.html', list_movies_active=True)
+    movie_list = movie_repository_singleton.get_all_movies()
+    return render_template('list_all_movies.html', list_movies_active=True, movie_list=movie_list)
 
 
 @app.get('/movies/new')
