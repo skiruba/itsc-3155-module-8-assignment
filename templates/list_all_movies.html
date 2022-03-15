@@ -7,12 +7,12 @@
 <p class="mb-3">See our list of movie ratings below</p>
 <!-- TODO: Feature 1 -->
 
-<ul>
-    {% for movies in movie_list %}
-    <li>
-        {{ movies._db }}
-    </li>
+<table>
+    {% for i in all_movies %}
+    <tr>
+        <td>{{ i._db }}</td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 
 {% endblock %}
