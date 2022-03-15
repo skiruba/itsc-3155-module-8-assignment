@@ -1,18 +1,42 @@
-{% extends '_layout.html' %}
+{% extends '_layout.html' %} {% block title %}Movie Rating App | All Movies{%
+endblock %} {% block body %}
 
-{% block title %}Movie Rating App | All Movies{% endblock %}
+<head>
+  <style>
+    table {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-{% block body %}
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+
+    }
+  </style>
+</head>
 <h1 class="mb-5">All Movies</h1>
 <p class="mb-3">See our list of movie ratings below</p>
 <!-- TODO: Feature 1 -->
 
 <table>
-    {% for i in all_movies %}
-    <tr>
-        <td>{{ i._db }}</td>
-    </tr>
+  <tr>
+    <th>Movie</th>
+    <th>Director</th>
+    <th>Rating</th>
+  </tr>
+  {% for movie in movie_list %}
+  </tr>
+
+  <tr>
+    <td>{{ movie.title }}</td>
+    <td>{{ movie.director }}</td>
+    <td>{{ movie.rating }}</td>
     {% endfor %}
+  </tr>
 </table>
 
 {% endblock %}
