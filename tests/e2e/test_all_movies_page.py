@@ -9,3 +9,6 @@ def test_app():
 def test_all_movies_page(test_app):
     response = test_app.get('/movies')
     assert b'<h1 class="mb-5">All Movies</h1>' in response.data
+    assert b'<th>Movie</th>' in response.data
+    assert b'<th>Director</th>' in response.data
+    assert b'<th>Rating</th>' in response.data
