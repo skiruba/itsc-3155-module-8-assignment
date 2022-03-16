@@ -4,6 +4,8 @@ Rating{% endblock %} {% block body %}
 <p class="mb-3">Create a movie rating below</p>
 <!-- TODO: Feature 2 -->
 <form action="/movies" method="post">
+
+  <!--create movie title text box-->
   <div class="mb-3">
     <label for="Movie Title" class="form-label">Movie Title</label>
     <input
@@ -14,7 +16,7 @@ Rating{% endblock %} {% block body %}
       autocomplete="off"
     />
   </div>
-
+<!--create director name textbox-->
   <div class="mb-3">
     <label for="Movie Director" class="form-label">Director</label>
     <input
@@ -25,7 +27,7 @@ Rating{% endblock %} {% block body %}
       autocomplete="off"
     />
   </div>
-
+<!--create rating selection box-->
   <div class="mb-3">
     <label for="Movie Rating" class="form-label">Rating(out of 5 stars)</label>
     <select class="form-select" name="rating" id="rating">
@@ -37,7 +39,7 @@ Rating{% endblock %} {% block body %}
       <option value="5">5 star</option>
     </select>
   </div>
-
+<!--submit button-->
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock %}
