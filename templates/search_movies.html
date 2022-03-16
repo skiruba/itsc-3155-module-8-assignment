@@ -6,4 +6,20 @@
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
 <!-- TODO: Feature 3 -->
+<form action="/movies/search" method="get">
+    <div class="mb-3">
+        <label for="movie_name" class="form-label">Rating</label>
+        <input
+          type="text"
+          class="form-control"
+          name="movie_name"
+          id="movie_name"
+          autocomplete="off"
+        />
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<p style="padding-top:10px"><b> {{ result }} </b><p>
+<p style="padding-top:10px"> {{ error }} </p>
+
 {% endblock %}

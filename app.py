@@ -46,4 +46,16 @@ def create_movie():
 @app.get('/movies/search')
 def search_movies():
     # TODO: Feature 3
-    return render_template('search_movies.html', search_active=True)
+    
+    movie_list = []
+    movies = request.args.get("movie_name")
+    movie_list = movie_repository_singleton.get_movie_by_title(movies)
+    error = " "
+    if movies != None:
+        result = "The movies name is " + movie_list.title + " and is directed by " + movie_list.director + " has a rating of " + movie_list.rating + "."
+    if movie_list == None and movies != None:
+        error = "No movie found"
+        result = ""
+    if movies == None:
+        result = ""
+    return render_template('search_movies.html', search_active=True, result = result, error = error)
